@@ -14,7 +14,8 @@
     "url": "https://github.com/chuyeow/node-myanimelist-api.git"
   },
   "dependencies": {
-    "koa": "0.0.1"
+    "koa": "0.0.1",
+    "nconf": "0.6.7"
   },
   "devDependencies": {
     "debug": "0.7.2",
