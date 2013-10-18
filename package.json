@@ -1,0 +1,30 @@
+{
+  "name": "node-myanimelist-api",
+  "description": "Unofficial API for myanimelist.net. http://mal-api.com",
+  "version": "0.1.0",
+  "author": "Cheah Chu Yeow <chuyeow@gmail.com>",
+  "contributors": [
+    {
+      "name": "Cheah Chu Yeow",
+      "email": "chuyeow@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chuyeow/node-myanimelist-api.git"
+  },
+  "dependencies": {
+    "koa": "0.0.1"
+  },
+  "devDependencies": {
+    "debug": "0.7.2",
+    "should": "2.0.1",
+    "mocha": "1.13.0"
+  },
+  "scripts": {
+    "start": "node --harmony-generators app.js"
+  },
+  "engines": {
+    "node": ">=0.11.4"
+  }
+}
