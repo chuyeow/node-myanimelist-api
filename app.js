@@ -2,7 +2,7 @@ var koa = require('koa')
   , koaLogger = require('koa-logger')
   , mount = require('koa-mount')
   , Router = require('koa-router')
-  , config = require('./lib/config');
+  , config = require('./config');
 
 var app = koa();
 app.use(koaLogger());
