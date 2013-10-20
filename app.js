@@ -3,8 +3,11 @@ var express = require('express')
   , Anime = require('./lib/anime')
   , notfound = require('./lib/notfound');
 
-if ('development' == app.env) app.use(require('koa-logger'));
 var app = express();
+if ('test' !== app.get('env')) app.use(express.logger(config.get('logger:format')));
+app.use(express.responseTime());
+app.use(express.favicon());
+app.use(express.json());
 
 app.get('/v2/anime/:id', function(req, res, next) {
   res.type('application/json');
