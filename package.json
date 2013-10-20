@@ -26,7 +26,9 @@
     "mocha": "1.13.0"
   },
   "scripts": {
-    "start": "node --harmony-generators app.js"
+    "start": "node --harmony-generators app.js",
+    "test": "make test",
+    "test-watch": "make test-watch"
   },
   "engines": {
     "node": ">=0.11.4"
