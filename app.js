@@ -1,11 +1,10 @@
 var koa = require('koa')
-  , koaLogger = require('koa-logger')
   , mount = require('koa-mount')
   , Router = require('koa-router')
   , config = require('./config');
 
 var app = koa();
-app.use(koaLogger());
+if ('development' == app.env) app.use(require('koa-logger'));
 
 var apiVersion2 = new Router();
 
