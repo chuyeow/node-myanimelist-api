@@ -14,11 +14,10 @@
     "url": "https://github.com/chuyeow/node-myanimelist-api.git"
   },
   "dependencies": {
-    "koa": "0.0.1",
-    "koa-logger": "1.0.1",
-    "koa-mount": "1.1.0",
-    "koa-router": "1.5.5",
-    "nconf": "0.6.7"
+    "cheerio": "0.12.3",
+    "express": "3.4.2",
+    "nconf": "0.6.7",
+    "request": "2.27.0"
   },
   "devDependencies": {
     "debug": "0.7.2",
@@ -33,6 +32,6 @@
     "test-watch": "make test-watch"
   },
   "engines": {
-    "node": ">=0.11.4"
+    "node": ">=0.11.7"
   }
 }

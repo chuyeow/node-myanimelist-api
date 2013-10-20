@@ -1,34 +1,28 @@
-var koa = require('koa')
-  , mount = require('koa-mount')
-  , Router = require('koa-router')
+var express = require('express')
   , config = require('./config')
+  , Anime = require('./lib/anime')
   , notfound = require('./lib/notfound');
 
-var app = koa();
 if ('development' == app.env) app.use(require('koa-logger'));
+var app = express();
 
-var apiVersion2 = new Router();
+app.get('/v2/anime/:id', function(req, res, next) {
+  res.type('application/json');
 
-apiVersion2.get('/anime/:id', function *(id, next) {
-  this.set('Content-Type', 'application/json');
-
+  var id = req.params.id;
   if (!/^\d+$/.test(id)) {
-    yield notfound()(next);
-    return;
+    return res.send(404, { 'error': 'not-found' });
   }
 
-  var anime = yield function *() { return id };
-  this.body = anime;
+  Anime.by_id(id, function(err, anime) {
+    res.send(anime);
+  });
 });
 
-app.use(mount('/v2', apiVersion2.middleware()));
 app.use(notfound());
 
-var server = app.listen(config.get('port'), function() {
+app.listen(config.get('port'), function() {
   console.log('API server listening on port ' + config.get('port'));
 });
 
-module.exports = {
-  app: app,
-  server: server
-}
+module.exports = app;
