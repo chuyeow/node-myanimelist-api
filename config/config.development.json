@@ -1,3 +1,6 @@
 {
-
+  "port": 8899,
+  "logger": {
+    "format": "dev"
+  }
 }
