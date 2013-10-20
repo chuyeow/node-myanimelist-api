@@ -3,12 +3,14 @@ REPORTER = spec
 
 test:
 	@NODE_ENV=test ./node_modules/.bin/mocha \
+		--harmony-generators \
 		--reporter $(REPORTER) \
 		--recursive \
 		$(MOCHA_OPTS)
 
 test-watch:
 	@NODE_ENV=test ./node_modules/.bin/mocha \
+		--harmony-generators \
 		--reporter $(REPORTER) \
 		--recursive \
 		--watch \
