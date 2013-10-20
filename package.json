@@ -24,6 +24,7 @@
     "debug": "0.7.2",
     "mocha": "1.13.0",
     "should": "2.0.1",
+    "sinon": "1.7.3",
     "supertest": "0.8.0"
   },
   "scripts": {
