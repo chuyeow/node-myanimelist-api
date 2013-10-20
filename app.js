@@ -9,12 +9,18 @@ if ('development' == app.env) app.use(require('koa-logger'));
 var apiVersion2 = new Router();
 
 apiVersion2.get('/anime/:id', function *(id) {
+  this.set('Content-Type', 'application/json');
   var anime = yield function *() { return id };
   this.body = anime;
 });
 
 app.use(mount('/v2', apiVersion2.middleware()));
 
-app.listen(config.get('port'), function() {
+var server = app.listen(config.get('port'), function() {
   console.log('API server listening on port ' + config.get('port'));
 });
+
+module.exports = {
+  app: app,
+  server: server
+}
