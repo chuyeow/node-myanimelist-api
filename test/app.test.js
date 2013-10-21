@@ -8,7 +8,7 @@ describe('GET /anime/:id', function() {
   var animeStub;
 
   beforeEach(function(done) {
-    animeStub = sinon.stub(Anime, 'by_id').yields(null, null);
+    animeStub = sinon.stub(Anime, 'byId').yields(null, null);
     done();
   });
   afterEach(function(done) {

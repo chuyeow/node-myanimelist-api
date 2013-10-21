@@ -17,7 +17,7 @@ app.get('/v2/anime/:id', function(req, res, next) {
     return res.send(404, { 'error': 'not-found' });
   }
 
-  Anime.by_id(id, function(err, anime) {
+  Anime.byId(id, function(err, anime) {
     res.send(anime);
   });
 });
