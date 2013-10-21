@@ -18,6 +18,7 @@ app.get('/v2/anime/:id', function(req, res, next) {
   }
 
   Anime.byId(id, function(err, anime) {
+    if (err) return next(err);
     res.send(anime);
   });
 });
